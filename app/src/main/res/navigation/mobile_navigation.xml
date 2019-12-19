@@ -14,7 +14,7 @@
     <fragment
         android:id="@+id/nav_openfile"
         android:name="com.pnhphamhieu.ebookreader.ui.openfile.OpenfileFragment"
-        android:label="@string/menu_openfile"
+        android:label="Open File"
         tools:layout="@layout/fragment_openfile" />
 
     <fragment
