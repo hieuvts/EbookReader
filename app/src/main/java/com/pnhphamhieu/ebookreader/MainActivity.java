@@ -54,7 +54,7 @@ import android.net.Uri;
 import android.provider.OpenableColumns;
 import android.util.Log;
 import android.widget.Toast;
-
+import com.folioreader.FolioReader;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_CHOOSER = 1234;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        final FolioReader folioReader = FolioReader.get();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED)
@@ -101,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Đã chọn Open File", Toast.LENGTH_LONG).show();
                 }
                 if (destination.getId() == R.id.nav_recents){
+                    folioReader.openBook("file:///android_asset/ngayhomquadatung.epub");
                     Toast.makeText(MainActivity.this, "Đã chọn Recents", Toast.LENGTH_LONG).show();
                 }
                 if (destination.getId() == R.id.nav_favorites){
@@ -192,7 +194,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-
 
 
 }
