@@ -8,7 +8,7 @@
 	EBook Reader hỗ trợ đọc cách định dạng sách điện tử phổ biến như Epub, PDF, Txt...
 ## Ảnh minh hoạ
  //
-	![alt text](link)
+	![alt text](https://raw.githubusercontent.com/hieuvts/images/master/ebook_reader.png)
 	![alt text](link)
 
 ## Sinh viên thực hiện 
