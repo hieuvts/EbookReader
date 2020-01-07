@@ -10,6 +10,7 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 
+import com.folioreader.FolioReader;
 import com.github.barteksc.pdfviewer.PDFView;
 
 import android.view.LayoutInflater;
@@ -83,7 +84,9 @@ public class MainActivity extends AppCompatActivity {
         }
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        //FolioReader
 
+        //
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         mAppBarConfiguration = new AppBarConfiguration.Builder(
@@ -205,7 +208,14 @@ public class MainActivity extends AppCompatActivity {
 
                 txt_view.setText(ReadTxt(filePath));
             }
-            else Toast.makeText(this, "Xin chọn file .PDF hoặc .TXT", Toast.LENGTH_SHORT).show();
+            else if (getFileExtension(filePath).equalsIgnoreCase(".epub") == true)
+            {
+                //Khởi tạo FolioReader
+                FolioReader folioReader = FolioReader.get();
+                //Đọc file epub từ filePath (local)
+                folioReader.openBook(filePath);
+            }
+            else Toast.makeText(this, "Xin chọn file .PDF, .EPUB hoặc .TXT", Toast.LENGTH_SHORT).show();
         }
     }
 
