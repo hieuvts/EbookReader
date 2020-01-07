@@ -9,7 +9,7 @@
 ## Ảnh minh hoạ
  //
 	![alt text](https://raw.githubusercontent.com/hieuvts/images/master/ebook_reader.png)
-	![alt text](link)
+
 
 ## Sinh viên thực hiện 
 	 Lê Trung Hiếu
